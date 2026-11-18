@@ -1,0 +1,951 @@
+title: Temperatura e umidità stanze
+type: sections
+sections:
+  - heading: Condizioni in Tempo Reale
+    subheading: Tutte le stanze · Andamento · Dettaglio · Diagnostica
+    card_mod:
+      style: |
+        :host {
+          max-width: none !important;
+          width: 100% !important;
+          padding: 20px 12px 28px 12px !important;
+          background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.00) 12%);
+          border-radius: 0 0 32px 32px;
+        }
+        .section-heading {
+          padding: 8px 20px 14px 20px !important;
+          margin-bottom: 4px !important;
+        }
+        .section-heading .heading {
+          font-size: 18px !important;
+          font-weight: 900 !important;
+          letter-spacing: 0.4px !important;
+        }
+        .section-heading .subheading {
+          font-size: 11px !important;
+          font-weight: 600 !important;
+          letter-spacing: 0.6px !important;
+          opacity: 0.72 !important;
+          margin-top: 3px !important;
+        }
+    cards:
+      - type: horizontal-stack
+        card_mod:
+          style: |
+            ha-card { width: 100% !important; max-width: none !important; margin-top: 0 !important; }
+        cards:
+          - type: entities
+            title: BAGNO
+            show_header_toggle: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px;
+                  border: 1px solid rgba(33,150,243,0.22);
+                  background: linear-gradient(135deg, rgba(33,150,243,0.26) 0%, rgba(33,150,243,0.07) 50%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06);
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 6px 0 0 !important;
+                }
+                .card-header {
+                  font-size: 11px !important; font-weight: 900 !important; letter-spacing: 2.5px !important;
+                  padding: 22px 28px 10px 28px !important; color: #BBDEFB;
+                  display: flex !important; align-items: center !important;
+                }
+                .card-header ha-icon, .card-header .icon { display: none !important; width: 0 !important; min-width: 0 !important; flex: 0 0 0 !important; padding: 0 !important; margin: 0 !important; }
+                #states > * { margin: 0 !important; }
+                .card-content { padding: 4px 0 8px 0 !important; width: 100% !important; }
+                .entity {
+                  padding: 10px 28px !important;
+                  width: 100% !important;
+                  display: flex !important;
+                  flex-direction: row !important;
+                  justify-content: space-between !important;
+                  align-items: baseline !important;
+                  gap: 14px !important;
+                }
+                .entity .icon, .entity > * > .icon, .entity ha-icon, .entity * ha-icon { display: none !important; width: 0 !important; min-width: 0 !important; max-width: 0 !important; flex: 0 0 0 !important; padding: 0 !important; margin: 0 !important; overflow: hidden !important; }
+                .entity .info, .entity .name {
+                  font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.9px !important;
+                  text-transform: uppercase !important; opacity: 0.78;
+                  padding: 0 !important; line-height: 1.2 !important;
+                  width: auto !important; min-width: 0 !important;
+                  text-align: left !important;
+                  flex: 0 0 auto !important;
+                }
+                .entity .state {
+                  font-size: 40px !important; font-weight: 900 !important;
+                  line-height: 1 !important; letter-spacing: -0.4px !important;
+                  white-space: nowrap !important;
+                  padding: 0 !important; margin: 0 !important;
+                  width: auto !important; min-width: 0 !important;
+                  text-align: right !important;
+                  flex: 1 1 auto !important;
+                }
+            entities:
+              - entity: sensor.nodemcu_bagno_ambiente_sht31_temperatura
+                name: Temperatura
+                card_mod:
+                  style: |
+                    .entity .state { color: #E3F2FD; }
+              - entity: sensor.nodemcu_bagno_ambiente_sht31_umidita_relativa
+                name: Umidità
+                card_mod:
+                  style: |
+                    .entity .state { color: #64B5F6; }
+
+          - type: entities
+            title: SALA
+            show_header_toggle: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px;
+                  border: 1px solid rgba(76,175,80,0.22);
+                  background: linear-gradient(135deg, rgba(76,175,80,0.26) 0%, rgba(76,175,80,0.07) 50%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06);
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 3px 0 3px !important;
+                }
+                .card-header {
+                  font-size: 11px !important; font-weight: 900 !important; letter-spacing: 2.5px !important;
+                  padding: 22px 28px 10px 28px !important; color: #C8E6C9;
+                  display: flex !important; align-items: center !important;
+                }
+                .card-header ha-icon, .card-header .icon { display: none !important; width: 0 !important; min-width: 0 !important; flex: 0 0 0 !important; padding: 0 !important; margin: 0 !important; }
+                #states > * { margin: 0 !important; }
+                .card-content { padding: 4px 0 8px 0 !important; width: 100% !important; }
+                .entity {
+                  padding: 10px 28px !important;
+                  width: 100% !important;
+                  display: flex !important;
+                  flex-direction: row !important;
+                  justify-content: space-between !important;
+                  align-items: baseline !important;
+                  gap: 14px !important;
+                }
+                .entity .icon, .entity > * > .icon, .entity ha-icon, .entity * ha-icon { display: none !important; width: 0 !important; min-width: 0 !important; max-width: 0 !important; flex: 0 0 0 !important; padding: 0 !important; margin: 0 !important; overflow: hidden !important; }
+                .entity .info, .entity .name {
+                  font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.9px !important;
+                  text-transform: uppercase !important; opacity: 0.78;
+                  padding: 0 !important; line-height: 1.2 !important;
+                  width: auto !important; min-width: 0 !important;
+                  text-align: left !important;
+                  flex: 0 0 auto !important;
+                }
+                .entity .state {
+                  font-size: 40px !important; font-weight: 900 !important;
+                  line-height: 1 !important; letter-spacing: -0.4px !important;
+                  white-space: nowrap !important;
+                  padding: 0 !important; margin: 0 !important;
+                  width: auto !important; min-width: 0 !important;
+                  text-align: right !important;
+                  flex: 1 1 auto !important;
+                }
+            entities:
+              - entity: sensor.nodemcu_sala_ambiente_sht31_temperatura
+                name: Temperatura
+                card_mod:
+                  style: |
+                    .entity .state { color: #E8F5E9; }
+              - entity: sensor.nodemcu_sala_ambiente_sht31_umidita_relativa
+                name: Umidità
+                card_mod:
+                  style: |
+                    .entity .state { color: #81C784; }
+
+          - type: entities
+            title: CAMERA
+            show_header_toggle: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px;
+                  border: 1px solid rgba(255,152,0,0.22);
+                  background: linear-gradient(135deg, rgba(255,152,0,0.26) 0%, rgba(255,152,0,0.07) 50%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06);
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 0 0 6px !important;
+                }
+                .card-header {
+                  font-size: 11px !important; font-weight: 900 !important; letter-spacing: 2.5px !important;
+                  padding: 22px 28px 10px 28px !important; color: #FFE0B2;
+                  display: flex !important; align-items: center !important;
+                }
+                .card-header ha-icon, .card-header .icon { display: none !important; width: 0 !important; min-width: 0 !important; flex: 0 0 0 !important; padding: 0 !important; margin: 0 !important; }
+                #states > * { margin: 0 !important; }
+                .card-content { padding: 4px 0 8px 0 !important; width: 100% !important; }
+                .entity {
+                  padding: 10px 28px !important;
+                  width: 100% !important;
+                  display: flex !important;
+                  flex-direction: row !important;
+                  justify-content: space-between !important;
+                  align-items: baseline !important;
+                  gap: 14px !important;
+                }
+                .entity .icon, .entity > * > .icon, .entity ha-icon, .entity * ha-icon { display: none !important; width: 0 !important; min-width: 0 !important; max-width: 0 !important; flex: 0 0 0 !important; padding: 0 !important; margin: 0 !important; overflow: hidden !important; }
+                .entity .info, .entity .name {
+                  font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.9px !important;
+                  text-transform: uppercase !important; opacity: 0.78;
+                  padding: 0 !important; line-height: 1.2 !important;
+                  width: auto !important; min-width: 0 !important;
+                  text-align: left !important;
+                  flex: 0 0 auto !important;
+                }
+                .entity .state {
+                  font-size: 40px !important; font-weight: 900 !important;
+                  line-height: 1 !important; letter-spacing: -0.4px !important;
+                  white-space: nowrap !important;
+                  padding: 0 !important; margin: 0 !important;
+                  width: auto !important; min-width: 0 !important;
+                  text-align: right !important;
+                  flex: 1 1 auto !important;
+                }
+            entities:
+              - entity: sensor.nodemcu_camera_da_letto_ambiente_sht31_temperatura
+                name: Temperatura
+                card_mod:
+                  style: |
+                    .entity .state { color: #FFF3E0; }
+              - entity: sensor.nodemcu_camera_da_letto_ambiente_sht31_umidita_relativa
+                name: Umidità
+                card_mod:
+                  style: |
+                    .entity .state { color: #FFB74D; }
+
+      - type: horizontal-stack
+        card_mod:
+          style: |
+            ha-card { width: 100% !important; max-width: none !important; margin-top: 20px !important; }
+        cards:
+          - type: custom:mini-graph-card
+            name: Temperature (24h)
+            icon: mdi:thermometer
+            hours_to_show: 24
+            points_per_hour: 12
+            animate: false
+            show:
+              graph: line
+              legend: true
+              fill: true
+              name: true
+              icon: true
+              state: false
+              points: false
+              labels: false
+            entities:
+              - entity: sensor.nodemcu_bagno_ambiente_sht31_temperatura
+                name: Bagno
+                color: '#2196F3'
+              - entity: sensor.nodemcu_sala_ambiente_sht31_temperatura
+                name: Sala
+                color: '#4CAF50'
+              - entity: sensor.nodemcu_camera_da_letto_ambiente_sht31_temperatura
+                name: Camera
+                color: '#FF9800'
+            lower_bound: 10
+            upper_bound: 35
+            line_width: 2.5
+            smoothing: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px !important;
+                  border: 1px solid rgba(120,120,140,0.22) !important;
+                  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px) !important;
+                  -webkit-backdrop-filter: blur(14px) !important;
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 6px 0 0 !important;
+                  padding: 18px 22px 22px 22px !important;
+                }
+                .graph { opacity: 0.72; padding-top: 18px !important; margin-top: 8px !important; height: 150px !important; min-height: 150px !important; }
+                .header { width: 100% !important; padding: 0 !important; margin: 0 0 4px 0 !important; }
+                .legend { margin-top: 16px !important; padding-top: 10px !important; padding-bottom: 4px !important; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px !important; }
+                .name { font-size: 13px !important; font-weight: 800 !important; letter-spacing: 0.6px !important; }
+                .icon { display: none !important; }
+                .states { display: none !important; }
+                .state { display: none !important; }
+
+          - type: custom:mini-graph-card
+            name: Umidità Relativa (24h)
+            icon: mdi:water-percent
+            hours_to_show: 24
+            points_per_hour: 12
+            animate: false
+            show:
+              graph: line
+              legend: true
+              fill: true
+              name: true
+              icon: true
+              state: false
+              points: false
+              labels: false
+            entities:
+              - entity: sensor.nodemcu_bagno_ambiente_sht31_umidita_relativa
+                name: Bagno
+                color: '#2196F3'
+              - entity: sensor.nodemcu_sala_ambiente_sht31_umidita_relativa
+                name: Sala
+                color: '#4CAF50'
+              - entity: sensor.nodemcu_camera_da_letto_ambiente_sht31_umidita_relativa
+                name: Camera
+                color: '#FF9800'
+            lower_bound: 20
+            upper_bound: 95
+            line_width: 2.5
+            smoothing: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px !important;
+                  border: 1px solid rgba(120,120,140,0.22) !important;
+                  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px) !important;
+                  -webkit-backdrop-filter: blur(14px) !important;
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 0 0 6px !important;
+                  padding: 18px 22px 22px 22px !important;
+                }
+                .graph { opacity: 0.72; padding-top: 18px !important; margin-top: 8px !important; height: 150px !important; min-height: 150px !important; }
+                .header { width: 100% !important; padding: 0 !important; margin: 0 0 4px 0 !important; }
+                .legend { margin-top: 16px !important; padding-top: 10px !important; padding-bottom: 4px !important; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px !important; }
+                .name { font-size: 13px !important; font-weight: 800 !important; letter-spacing: 0.6px !important; }
+                .icon { display: none !important; }
+                .states { display: none !important; }
+                .state { display: none !important; }
+
+      - type: horizontal-stack
+        card_mod:
+          style: |
+            ha-card { width: 100% !important; max-width: none !important; margin-top: 20px !important; }
+        cards:
+          - type: entities
+            show_header_toggle: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px !important;
+                  border: 1px solid rgba(33,150,243,0.22) !important;
+                  background: linear-gradient(180deg, rgba(33,150,243,0.12) 0%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px) !important;
+                  -webkit-backdrop-filter: blur(14px) !important;
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 6px 0 0 !important;
+                }
+                .card-content { padding: 16px 22px 20px 22px !important; width: 100% !important; }
+                #states > * { margin: 0 !important; }
+                .entity { width: 100% !important; padding: 2px 0 !important; }
+                h3.section-header {
+                  font-size: 11px !important; font-weight: 900 !important; letter-spacing: 1.5px !important;
+                  color: #64B5F6; margin: 14px 16px 18px 16px !important; padding: 0 !important;
+                  border-left: 3px solid #2196F3 !important; padding-left: 10px !important;
+                  line-height: 1.35 !important;
+                }
+            entities:
+              - type: section
+                label: BAGNO · Dettaglio Ambientale
+              - type: custom:bar-card
+                entities:
+                  - entity: sensor.nodemcu_bagno_ambiente_sht31_temperatura
+                    name: Temp.°C
+                    min: 10
+                    max: 35
+                    severity:
+                      - from: 0
+                        to: 15
+                        color: '#42A5F5'
+                      - from: 15
+                        to: 23
+                        color: '#66BB6A'
+                      - from: 23
+                        to: 28
+                        color: '#FFA726'
+                      - from: 28
+                        to: 50
+                        color: '#EF5350'
+                  - entity: sensor.nodemcu_bagno_ambiente_sht31_umidita_relativa
+                    name: Umid.%
+                    min: 20
+                    max: 95
+                    severity:
+                      - from: 0
+                        to: 40
+                        color: '#FF7043'
+                      - from: 40
+                        to: 60
+                        color: '#66BB6A'
+                      - from: 60
+                        to: 75
+                        color: '#FFA726'
+                      - from: 75
+                        to: 100
+                        color: '#42A5F5'
+                  - entity: sensor.nodemcu_bagno_ambiente_sht31_punto_rugiada
+                    name: P.Ruig.°C
+                    min: 0
+                    max: 25
+                  - entity: sensor.nodemcu_bagno_ambiente_sht31_indice_calore
+                    name: Ind.Cal.°C
+                    min: 10
+                    max: 50
+                    severity:
+                      - from: 0
+                        to: 26
+                        color: '#66BB6A'
+                      - from: 26
+                        to: 32
+                        color: '#FFA726'
+                      - from: 32
+                        to: 41
+                        color: '#EF5350'
+                      - from: 41
+                        to: 54
+                        color: '#AB47BC'
+                  - entity: sensor.nodemcu_bagno_ambiente_sht31_umidita_assoluta
+                    name: Umid.Ass.g/m³
+                    min: 0
+                    max: 20
+                height: 340
+                stack: vertical
+                direction: right
+                positions:
+                  icon: 'off'
+                  indicator: 'off'
+                  name: outside
+                  minmax: 'off'
+                  value: outside
+                severity:
+                  - from: 0
+                    to: 100
+                    color: var(--primary-color)
+                card_mod:
+                  style: |
+                    bar-card-value {
+                      font-weight: 800; font-size: 15px; min-width: 100px !important;
+                      padding-left: 14px !important; flex-shrink: 0 !important;
+                      white-space: nowrap !important;
+                      text-align: left !important;
+                    }
+                    bar-card-name {
+                      font-weight: 700; letter-spacing: 0.5px; font-size: 13.5px;
+                      min-width: 120px !important; width: 120px !important;
+                      white-space: nowrap !important; flex-shrink: 0 !important;
+                      overflow: visible !important;
+                      padding-right: 16px !important;
+                      text-align: right !important;
+                    }
+                    bar-card-currentbar, bar-card-backgroundbar { border-radius: 10px; height: 28px !important; }
+                    bar-card-background { margin: 6px 0 !important; }
+
+          - type: entities
+            show_header_toggle: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px !important;
+                  border: 1px solid rgba(76,175,80,0.22) !important;
+                  background: linear-gradient(180deg, rgba(76,175,80,0.12) 0%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px) !important;
+                  -webkit-backdrop-filter: blur(14px) !important;
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 3px 0 3px !important;
+                }
+                .card-content { padding: 16px 22px 20px 22px !important; width: 100% !important; }
+                #states > * { margin: 0 !important; }
+                .entity { width: 100% !important; padding: 2px 0 !important; }
+                h3.section-header {
+                  font-size: 11px !important; font-weight: 900 !important; letter-spacing: 1.5px !important;
+                  color: #81C784; margin: 14px 16px 18px 16px !important; padding: 0 !important;
+                  border-left: 3px solid #4CAF50 !important; padding-left: 10px !important;
+                  line-height: 1.35 !important;
+                }
+            entities:
+              - type: section
+                label: SALA · Dettaglio Ambientale
+              - type: custom:bar-card
+                entities:
+                  - entity: sensor.nodemcu_sala_ambiente_sht31_temperatura
+                    name: Temp.°C
+                    min: 10
+                    max: 35
+                    severity:
+                      - from: 0
+                        to: 15
+                        color: '#42A5F5'
+                      - from: 15
+                        to: 23
+                        color: '#66BB6A'
+                      - from: 23
+                        to: 28
+                        color: '#FFA726'
+                      - from: 28
+                        to: 50
+                        color: '#EF5350'
+                  - entity: sensor.nodemcu_sala_ambiente_sht31_umidita_relativa
+                    name: Umid.%
+                    min: 20
+                    max: 95
+                    severity:
+                      - from: 0
+                        to: 40
+                        color: '#FF7043'
+                      - from: 40
+                        to: 60
+                        color: '#66BB6A'
+                      - from: 60
+                        to: 75
+                        color: '#FFA726'
+                      - from: 75
+                        to: 100
+                        color: '#42A5F5'
+                  - entity: sensor.nodemcu_sala_ambiente_sht31_punto_rugiada
+                    name: P.Ruig.°C
+                    min: 0
+                    max: 25
+                  - entity: sensor.nodemcu_sala_ambiente_sht31_indice_calore
+                    name: Ind.Cal.°C
+                    min: 10
+                    max: 50
+                    severity:
+                      - from: 0
+                        to: 26
+                        color: '#66BB6A'
+                      - from: 26
+                        to: 32
+                        color: '#FFA726'
+                      - from: 32
+                        to: 41
+                        color: '#EF5350'
+                      - from: 41
+                        to: 54
+                        color: '#AB47BC'
+                  - entity: sensor.nodemcu_sala_ambiente_sht31_umidita_assoluta
+                    name: Umid.Ass.g/m³
+                    min: 0
+                    max: 20
+                height: 340
+                stack: vertical
+                direction: right
+                positions:
+                  icon: 'off'
+                  indicator: 'off'
+                  name: outside
+                  minmax: 'off'
+                  value: outside
+                severity:
+                  - from: 0
+                    to: 100
+                    color: var(--primary-color)
+                card_mod:
+                  style: |
+                    bar-card-value {
+                      font-weight: 800; font-size: 15px; min-width: 100px !important;
+                      padding-left: 14px !important; flex-shrink: 0 !important;
+                      white-space: nowrap !important;
+                      text-align: left !important;
+                    }
+                    bar-card-name {
+                      font-weight: 700; letter-spacing: 0.5px; font-size: 13.5px;
+                      min-width: 120px !important; width: 120px !important;
+                      white-space: nowrap !important; flex-shrink: 0 !important;
+                      overflow: visible !important;
+                      padding-right: 16px !important;
+                      text-align: right !important;
+                    }
+                    bar-card-currentbar, bar-card-backgroundbar { border-radius: 10px; height: 28px !important; }
+                    bar-card-background { margin: 6px 0 !important; }
+
+          - type: entities
+            show_header_toggle: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px !important;
+                  border: 1px solid rgba(255,152,0,0.22) !important;
+                  background: linear-gradient(180deg, rgba(255,152,0,0.12) 0%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px) !important;
+                  -webkit-backdrop-filter: blur(14px) !important;
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 0 0 6px !important;
+                }
+                .card-content { padding: 16px 22px 20px 22px !important; width: 100% !important; }
+                #states > * { margin: 0 !important; }
+                .entity { width: 100% !important; padding: 2px 0 !important; }
+                h3.section-header {
+                  font-size: 11px !important; font-weight: 900 !important; letter-spacing: 1.5px !important;
+                  color: #FFB74D; margin: 14px 16px 18px 16px !important; padding: 0 !important;
+                  border-left: 3px solid #FF9800 !important; padding-left: 10px !important;
+                  line-height: 1.35 !important;
+                }
+            entities:
+              - type: section
+                label: CAMERA · Dettaglio Ambientale
+              - type: custom:bar-card
+                entities:
+                  - entity: sensor.nodemcu_camera_da_letto_ambiente_sht31_temperatura
+                    name: Temp.°C
+                    min: 10
+                    max: 35
+                    severity:
+                      - from: 0
+                        to: 15
+                        color: '#42A5F5'
+                      - from: 15
+                        to: 23
+                        color: '#66BB6A'
+                      - from: 23
+                        to: 28
+                        color: '#FFA726'
+                      - from: 28
+                        to: 50
+                        color: '#EF5350'
+                  - entity: sensor.nodemcu_camera_da_letto_ambiente_sht31_umidita_relativa
+                    name: Umid.%
+                    min: 20
+                    max: 95
+                    severity:
+                      - from: 0
+                        to: 40
+                        color: '#FF7043'
+                      - from: 40
+                        to: 60
+                        color: '#66BB6A'
+                      - from: 60
+                        to: 75
+                        color: '#FFA726'
+                      - from: 75
+                        to: 100
+                        color: '#42A5F5'
+                  - entity: sensor.nodemcu_camera_da_letto_ambiente_sht31_punto_rugiada
+                    name: P.Ruig.°C
+                    min: 0
+                    max: 25
+                  - entity: sensor.nodemcu_camera_da_letto_ambiente_sht31_indice_calore
+                    name: Ind.Cal.°C
+                    min: 10
+                    max: 50
+                    severity:
+                      - from: 0
+                        to: 26
+                        color: '#66BB6A'
+                      - from: 26
+                        to: 32
+                        color: '#FFA726'
+                      - from: 32
+                        to: 41
+                        color: '#EF5350'
+                      - from: 41
+                        to: 54
+                        color: '#AB47BC'
+                  - entity: sensor.nodemcu_camera_da_letto_ambiente_sht31_umidita_assoluta
+                    name: Umid.Ass.g/m³
+                    min: 0
+                    max: 20
+                height: 340
+                stack: vertical
+                direction: right
+                positions:
+                  icon: 'off'
+                  indicator: 'off'
+                  name: outside
+                  minmax: 'off'
+                  value: outside
+                severity:
+                  - from: 0
+                    to: 100
+                    color: var(--primary-color)
+                card_mod:
+                  style: |
+                    bar-card-value {
+                      font-weight: 800; font-size: 15px; min-width: 100px !important;
+                      padding-left: 14px !important; flex-shrink: 0 !important;
+                      white-space: nowrap !important;
+                      text-align: left !important;
+                    }
+                    bar-card-name {
+                      font-weight: 700; letter-spacing: 0.5px; font-size: 13.5px;
+                      min-width: 120px !important; width: 120px !important;
+                      white-space: nowrap !important; flex-shrink: 0 !important;
+                      overflow: visible !important;
+                      padding-right: 16px !important;
+                      text-align: right !important;
+                    }
+                    bar-card-currentbar, bar-card-backgroundbar { border-radius: 10px; height: 28px !important; }
+                    bar-card-background { margin: 6px 0 !important; }
+
+      - type: horizontal-stack
+        card_mod:
+          style: |
+            ha-card { width: 100% !important; max-width: none !important; margin-top: 20px !important; }
+        cards:
+          - type: entities
+            show_header_toggle: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px !important;
+                  border: 1px solid rgba(33,150,243,0.22) !important;
+                  background: linear-gradient(180deg, rgba(33,150,243,0.08) 0%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px) !important;
+                  -webkit-backdrop-filter: blur(14px) !important;
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 6px 0 0 !important;
+                }
+                .card-content { padding: 20px 24px 24px 24px !important; width: 100% !important; }
+                #states > * { margin: 0 !important; }
+                .entity { width: 100% !important; padding: 6px 0 !important; }
+                .entity .state,
+                .entity .entities-row .state {
+                  font-size: 14.5px !important; font-weight: 800 !important;
+                  white-space: nowrap !important;
+                }
+                .entity .entities-row {
+                  display: flex !important; flex-direction: row !important;
+                  justify-content: space-between !important; align-items: center !important;
+                  width: 100% !important; gap: 20px !important;
+                  flex-wrap: wrap !important;
+                }
+                .entity .entities-row .entity {
+                  padding: 0 !important; flex: 1 1 0% !important; min-width: 72px !important;
+                }
+                h3.section-header {
+                  font-size: 10px !important; font-weight: 900 !important; letter-spacing: 1.5px !important;
+                  margin: 26px 24px 18px 24px !important; padding: 0 !important;
+                  border-left: 3px solid #2196F3 !important; padding-left: 10px !important;
+                  line-height: 1.35 !important;
+                }
+                h3.section-header:nth-of-type(1) { color: #64B5F6; }
+                h3.section-header:nth-of-type(2) { color: #42A5F5; }
+                h3.section-header:nth-of-type(3) { color: #1E88E5; }
+                h3.section-header:nth-of-type(4) { color: #90CAF9; }
+            entities:
+              - type: section
+                label: BAGNO · Rete
+              - entity: sensor.nodemcu_bagno_diag_wifi_sta_ip_v4
+                name: Indirizzo IP
+                icon: mdi:ip-network-outline
+              - entity: sensor.nodemcu_bagno_diag_wifi_sta_rssi
+                name: Potenza RSSI
+                icon: mdi:wifi
+              - type: section
+                label: Sensori
+              - entity: sensor.nodemcu_bagno_stato_sensori_bitmask
+                name: Bitmask Collegati
+                icon: mdi:counter
+              - type: custom:multiple-entity-row
+                entity: sensor.nodemcu_bagno_stato_sensori_connected_hex
+                name: Stato Bus
+                icon: mdi:code-tags
+                show_state: true
+                state_header: HEX
+                entities:
+                  - entity: sensor.nodemcu_bagno_stato_sensori_connected_bin
+                    name: BIN
+              - type: section
+                label: Supervisore
+              - entity: sensor.nodemcu_bagno_supervisore_livello
+                name: Livello
+                icon: mdi:shield-half-full
+              - entity: sensor.nodemcu_bagno_supervisore_cnt_l1_reboot
+                name: Reboot L1
+                icon: mdi:repeat
+              - entity: sensor.nodemcu_bagno_supervisore_cnt_l2_reboot
+                name: Reboot L2
+                icon: mdi:repeat
+              - entity: sensor.nodemcu_bagno_supervisore_cnt_l3_reboot
+                name: Reboot L3
+                icon: mdi:repeat
+              - type: section
+                label: Ultimi Eventi
+              - entity: sensor.nodemcu_bagno_last_conn_ok_fa
+                name: Ultimo Conn OK
+                icon: mdi:check-network-outline
+              - entity: sensor.nodemcu_bagno_last_pub_ok_fa
+                name: Ultima Pub OK
+                icon: mdi:send-check-outline
+
+          - type: entities
+            show_header_toggle: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px !important;
+                  border: 1px solid rgba(76,175,80,0.22) !important;
+                  background: linear-gradient(180deg, rgba(76,175,80,0.08) 0%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px) !important;
+                  -webkit-backdrop-filter: blur(14px) !important;
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 3px 0 3px !important;
+                }
+                .card-content { padding: 20px 24px 24px 24px !important; width: 100% !important; }
+                #states > * { margin: 0 !important; }
+                .entity { width: 100% !important; padding: 6px 0 !important; }
+                .entity .state,
+                .entity .entities-row .state {
+                  font-size: 14.5px !important; font-weight: 800 !important;
+                  white-space: nowrap !important;
+                }
+                .entity .entities-row {
+                  display: flex !important; flex-direction: row !important;
+                  justify-content: space-between !important; align-items: center !important;
+                  width: 100% !important; gap: 20px !important;
+                  flex-wrap: wrap !important;
+                }
+                .entity .entities-row .entity {
+                  padding: 0 !important; flex: 1 1 0% !important; min-width: 72px !important;
+                }
+                h3.section-header {
+                  font-size: 10px !important; font-weight: 900 !important; letter-spacing: 1.5px !important;
+                  margin: 26px 24px 18px 24px !important; padding: 0 !important;
+                  border-left: 3px solid #4CAF50 !important; padding-left: 10px !important;
+                  line-height: 1.35 !important;
+                }
+                h3.section-header:nth-of-type(1) { color: #81C784; }
+                h3.section-header:nth-of-type(2) { color: #66BB6A; }
+                h3.section-header:nth-of-type(3) { color: #43A047; }
+                h3.section-header:nth-of-type(4) { color: #A5D6A7; }
+            entities:
+              - type: section
+                label: SALA · Rete
+              - entity: sensor.nodemcu_sala_diag_wifi_sta_ip_v4
+                name: Indirizzo IP
+                icon: mdi:ip-network-outline
+              - entity: sensor.nodemcu_sala_diag_wifi_sta_rssi
+                name: Potenza RSSI
+                icon: mdi:wifi
+              - type: section
+                label: Sensori
+              - entity: sensor.nodemcu_sala_stato_sensori_bitmask
+                name: Bitmask Collegati
+                icon: mdi:counter
+              - type: custom:multiple-entity-row
+                entity: sensor.nodemcu_sala_stato_sensori_connected_hex
+                name: Stato Bus
+                icon: mdi:code-tags
+                show_state: true
+                state_header: HEX
+                entities:
+                  - entity: sensor.nodemcu_sala_stato_sensori_connected_bin
+                    name: BIN
+              - type: section
+                label: Supervisore
+              - entity: sensor.nodemcu_sala_supervisore_livello
+                name: Livello
+                icon: mdi:shield-half-full
+              - entity: sensor.nodemcu_sala_supervisore_cnt_l1_reboot
+                name: Reboot L1
+                icon: mdi:repeat
+              - entity: sensor.nodemcu_sala_supervisore_cnt_l2_reboot
+                name: Reboot L2
+                icon: mdi:repeat
+              - entity: sensor.nodemcu_sala_supervisore_cnt_l3_reboot
+                name: Reboot L3
+                icon: mdi:repeat
+              - type: section
+                label: Ultimi Eventi
+              - entity: sensor.nodemcu_sala_last_conn_ok_fa
+                name: Ultimo Conn OK
+                icon: mdi:check-network-outline
+              - entity: sensor.nodemcu_sala_last_pub_ok_fa
+                name: Ultima Pub OK
+                icon: mdi:send-check-outline
+
+          - type: entities
+            show_header_toggle: false
+            card_mod:
+              style: |
+                ha-card {
+                  border-radius: 22px !important;
+                  border: 1px solid rgba(255,152,0,0.22) !important;
+                  background: linear-gradient(180deg, rgba(255,152,0,0.08) 0%, rgba(0,0,0,0.00) 100%);
+                  backdrop-filter: blur(14px) !important;
+                  -webkit-backdrop-filter: blur(14px) !important;
+                  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+                  flex: 1 1 0% !important; min-width: 0 !important; width: 100% !important; max-width: none !important;
+                  margin: 0 0 0 6px !important;
+                }
+                .card-content { padding: 20px 24px 24px 24px !important; width: 100% !important; }
+                #states > * { margin: 0 !important; }
+                .entity { width: 100% !important; padding: 6px 0 !important; }
+                .entity .state,
+                .entity .entities-row .state {
+                  font-size: 14.5px !important; font-weight: 800 !important;
+                  white-space: nowrap !important;
+                }
+                .entity .entities-row {
+                  display: flex !important; flex-direction: row !important;
+                  justify-content: space-between !important; align-items: center !important;
+                  width: 100% !important; gap: 20px !important;
+                  flex-wrap: wrap !important;
+                }
+                .entity .entities-row .entity {
+                  padding: 0 !important; flex: 1 1 0% !important; min-width: 72px !important;
+                }
+                h3.section-header {
+                  font-size: 10px !important; font-weight: 900 !important; letter-spacing: 1.5px !important;
+                  margin: 26px 24px 18px 24px !important; padding: 0 !important;
+                  border-left: 3px solid #FF9800 !important; padding-left: 10px !important;
+                  line-height: 1.35 !important;
+                }
+                h3.section-header:nth-of-type(1) { color: #FFB74D; }
+                h3.section-header:nth-of-type(2) { color: #FFA726; }
+                h3.section-header:nth-of-type(3) { color: #FB8C00; }
+                h3.section-header:nth-of-type(4) { color: #FFCC80; }
+            entities:
+              - type: section
+                label: CAMERA · Rete
+              - entity: sensor.nodemcu_camera_da_letto_diag_wifi_sta_ip_v4
+                name: Indirizzo IP
+                icon: mdi:ip-network-outline
+              - entity: sensor.nodemcu_camera_da_letto_diag_wifi_sta_rssi
+                name: Potenza RSSI
+                icon: mdi:wifi
+              - type: section
+                label: Sensori
+              - entity: sensor.nodemcu_camera_da_letto_stato_sensori_bitmask
+                name: Bitmask Collegati
+                icon: mdi:counter
+              - type: custom:multiple-entity-row
+                entity: sensor.nodemcu_camera_da_letto_stato_sensori_connected_hex
+                name: Stato Bus
+                icon: mdi:code-tags
+                show_state: true
+                state_header: HEX
+                entities:
+                  - entity: sensor.nodemcu_camera_da_letto_stato_sensori_connected_bin
+                    name: BIN
+              - type: section
+                label: Supervisore
+              - entity: sensor.nodemcu_camera_da_letto_supervisore_livello
+                name: Livello
+                icon: mdi:shield-half-full
+              - entity: sensor.nodemcu_camera_da_letto_supervisore_cnt_l1_reboot
+                name: Reboot L1
+                icon: mdi:repeat
+              - entity: sensor.nodemcu_camera_da_letto_supervisore_cnt_l2_reboot
+                name: Reboot L2
+                icon: mdi:repeat
+              - entity: sensor.nodemcu_camera_da_letto_supervisore_cnt_l3_reboot
+                name: Reboot L3
+                icon: mdi:repeat
+              - type: section
+                label: Ultimi Eventi
+              - entity: sensor.nodemcu_camera_da_letto_last_conn_ok_fa
+                name: Ultimo Conn OK
+                icon: mdi:check-network-outline
+              - entity: sensor.nodemcu_camera_da_letto_last_pub_ok_fa
+                name: Ultima Pub OK
+                icon: mdi:send-check-outline

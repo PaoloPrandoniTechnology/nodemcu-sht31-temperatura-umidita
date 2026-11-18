@@ -1,0 +1,95 @@
+title: Temperatura e umidità stanze
+type: sections
+sections:
+  - heading: Bagno
+    cards:
+      - type: entities
+        entities:
+          - sensor.nodemcu_bagno_ambiente_sht31_temperatura
+          - sensor.nodemcu_bagno_ambiente_sht31_umidita_relativa
+          - sensor.nodemcu_bagno_ambiente_sht31_punto_rugiada
+          - sensor.nodemcu_bagno_ambiente_sht31_indice_calore
+          - sensor.nodemcu_bagno_ambiente_sht31_umidita_assoluta
+          - switch.nodemcu_bagno_heater_anti_condensa
+
+  - heading: Sala
+    cards:
+      - type: entities
+        entities:
+          - sensor.nodemcu_sala_ambiente_sht31_temperatura
+          - sensor.nodemcu_sala_ambiente_sht31_umidita_relativa
+          - sensor.nodemcu_sala_ambiente_sht31_punto_rugiada
+          - sensor.nodemcu_sala_ambiente_sht31_indice_calore
+          - sensor.nodemcu_sala_ambiente_sht31_umidita_assoluta
+          - switch.nodemcu_sala_heater_anti_condensa
+
+  - heading: Camera
+    cards:
+      - type: entities
+        entities:
+          - sensor.nodemcu_camera_da_letto_ambiente_sht31_temperatura
+          - sensor.nodemcu_camera_da_letto_ambiente_sht31_umidita_relativa
+          - sensor.nodemcu_camera_da_letto_ambiente_sht31_punto_rugiada
+          - sensor.nodemcu_camera_da_letto_ambiente_sht31_indice_calore
+          - sensor.nodemcu_camera_da_letto_ambiente_sht31_umidita_assoluta
+          - switch.nodemcu_camera_da_letto_heater_anti_condensa
+
+  - heading: Diagnostica Bagno
+    cards:
+      - type: entities
+        entities:
+          - sensor.nodemcu_bagno_diag_wifi_sta_ip_v4
+          - sensor.nodemcu_bagno_diag_wifi_sta_rssi
+          - sensor.nodemcu_bagno_diag_mem_heap_frag_pct
+          - sensor.nodemcu_bagno_diag_mem_heap_min_free
+          - sensor.nodemcu_bagno_stato_sensori_bitmask
+          - sensor.nodemcu_bagno_stato_sensori_connected_hex
+          - sensor.nodemcu_bagno_stato_sensori_connected_bin
+          - sensor.nodemcu_bagno_supervisore_livello
+          - sensor.nodemcu_bagno_supervisore_cnt_l1_reboot
+          - sensor.nodemcu_bagno_supervisore_cnt_l2_reboot
+          - sensor.nodemcu_bagno_supervisore_cnt_l3_reboot
+          - sensor.nodemcu_bagno_supervisore_reset_reason_hw
+          - sensor.nodemcu_bagno_supv_last_good_conn_ms
+          - sensor.nodemcu_bagno_last_conn_ok_fa
+          - sensor.nodemcu_bagno_last_pub_ok_fa
+
+  - heading: Diagnostica Sala
+    cards:
+      - type: entities
+        entities:
+          - sensor.nodemcu_sala_diag_wifi_sta_ip_v4
+          - sensor.nodemcu_sala_diag_wifi_sta_rssi
+          - sensor.nodemcu_sala_diag_mem_heap_frag_pct
+          - sensor.nodemcu_sala_diag_mem_heap_min_free
+          - sensor.nodemcu_sala_stato_sensori_bitmask
+          - sensor.nodemcu_sala_stato_sensori_connected_hex
+          - sensor.nodemcu_sala_stato_sensori_connected_bin
+          - sensor.nodemcu_sala_supervisore_livello
+          - sensor.nodemcu_sala_supervisore_cnt_l1_reboot
+          - sensor.nodemcu_sala_supervisore_cnt_l2_reboot
+          - sensor.nodemcu_sala_supervisore_cnt_l3_reboot
+          - sensor.nodemcu_sala_supervisore_reset_reason_hw
+          - sensor.nodemcu_sala_supv_last_good_conn_ms
+          - sensor.nodemcu_sala_last_conn_ok_fa
+          - sensor.nodemcu_sala_last_pub_ok_fa
+
+  - heading: Diagnostica Camera
+    cards:
+      - type: entities
+        entities:
+          - sensor.nodemcu_camera_da_letto_diag_wifi_sta_ip_v4
+          - sensor.nodemcu_camera_da_letto_diag_wifi_sta_rssi
+          - sensor.nodemcu_camera_da_letto_diag_mem_heap_frag_pct
+          - sensor.nodemcu_camera_da_letto_diag_mem_heap_min_free
+          - sensor.nodemcu_camera_da_letto_stato_sensori_bitmask
+          - sensor.nodemcu_camera_da_letto_stato_sensori_connected_hex
+          - sensor.nodemcu_camera_da_letto_stato_sensori_connected_bin
+          - sensor.nodemcu_camera_da_letto_supervisore_livello
+          - sensor.nodemcu_camera_da_letto_supervisore_cnt_l1_reboot
+          - sensor.nodemcu_camera_da_letto_supervisore_cnt_l2_reboot
+          - sensor.nodemcu_camera_da_letto_supervisore_cnt_l3_reboot
+          - sensor.nodemcu_camera_da_letto_supervisore_reset_reason_hw
+          - sensor.nodemcu_camera_da_letto_supv_last_good_conn_ms
+          - sensor.nodemcu_camera_da_letto_last_conn_ok_fa
+          - sensor.nodemcu_camera_da_letto_last_pub_ok_fa
